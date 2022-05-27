@@ -226,7 +226,7 @@ class PlayerActivity : AppCompatActivity(){
             buttonselected.setTextColor(Color.parseColor("#D22BB804"))
             player2.add(rnd)
             buttonselected.isEnabled = false
-            var checkWinner = checkwinner()
+            val checkWinner = checkwinner()
             if (checkWinner == 1)
                 Handler(Looper.getMainLooper()).postDelayed(Runnable { reset() }, 2000)
 
