@@ -13,7 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_player.*
 import kotlin.system.exitProcess
 
-var playerTurn=true
+var myturn=true
 class PlayerActivity : AppCompatActivity(){
     var player1Count = 0
     var player2Count = 0
@@ -22,9 +22,8 @@ class PlayerActivity : AppCompatActivity(){
         setContentView(R.layout.activity_player)
     }
 
-
     fun onClickBtn(view: View) {
-        if (playerTurn) {
+        if (myturn) {
             val but = view as Button
             var cellID = 0
             when (but.id) {
@@ -39,8 +38,8 @@ class PlayerActivity : AppCompatActivity(){
                 R.id.button9 -> cellID = 9
 
             }
-            playerTurn = false;
-            Handler(Looper.getMainLooper()).postDelayed(Runnable { playerTurn = true }, 600)
+            myturn = false;
+            Handler(Looper.getMainLooper()).postDelayed(Runnable { myturn = true }, 600)
             playnow(but, cellID)
 
         }
